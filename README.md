@@ -2,7 +2,7 @@
 
 The goal of this AI solution is to detect in real time diseases from chest x-ray images
 using deep learning algorithms that leverage convolutional neural network to build
-a model used in predictions. I developed a UI that allows a chest x-ray digital image to be uploaded and classified in real-time into any of the 13 different disease categories. It display this information in the form of a bar-chart with probablity in terms of percentage of disease categories.
+a model used in predictions. I developed a UI that allows a chest x-ray digital image to be uploaded and classified in real-time into any of the 13 different disease categories. It display this information in the form of a bar-chart with probablity in terms of percentage of each disease category.
 
 **Classes of Diseases**
 
