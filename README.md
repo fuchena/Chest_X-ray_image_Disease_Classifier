@@ -5,6 +5,7 @@ using deep learning algorithms that leverage convolutional neural network to bui
 a model used in predictions. I developed a UI that allows a chest x-ray digital image to be uploaded and classified in real-time into any of the 13 different disease categories. It display this information in the form of a bar-chart with probablity in terms of percentage of disease categories.
 
 **Classes of Diseases**
+
 The following are the list of the 14 categories of diseases our dataset is associated with
 for now:
 1. Atelectasis
