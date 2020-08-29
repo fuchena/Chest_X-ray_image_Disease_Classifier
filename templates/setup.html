@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename = 'assets/img/apple-icon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'assets/img/favicon.png') }}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>MedPrognosis-Setup</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="{{url_for('static', filename='assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="{{url_for('static', filename='assets/css/turbo.css')}}" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="{{url_for('static', filename='assets/css/demo.css')}}" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <link href="{{url_for('static', filename='assets/vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    MedPrognosis
+                </a>
+            </div>
+            <div class="logo logo-mini">
+                <a href="#" class="simple-text">
+                    Med
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="/dashboard">
+                            <i class="material-icons">view_list</i>
+                            <p>Dashboard</p>
+                        </a>
+                         <a href="/index">
+                            <i class="material-icons">home</i>
+                            <p>Home</p>
+                        </a>
+                         <a href="">
+                            <i class="material-icons">settings</i>
+                            <p>Setup</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-absolute" data-topbar-color="blue">
+                <div class="container-fluid">
+                    <div class="navbar-minimize">
+                        <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+							<i class="material-icons visible-on-sidebar-regular f-26">keyboard_arrow_left</i>
+                            <i class="material-icons visible-on-sidebar-mini f-26">keyboard_arrow_right</i>
+                        </button>
+                    </div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"> MedPrognosis </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+<!--                            <li>-->
+<!--                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--                                    <i class="material-icons">apps</i>-->
+<!--                                    <p class="hidden-lg hidden-md">Apps</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--                                    <i class="material-icons">person</i>-->
+<!--                                    <p class="hidden-lg hidden-md">Profile</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">settings</i>
+                                    <p class="hidden-lg hidden-md">Settings</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <h4 class="card-title">Hyperparameters</h4>
+                                    <form method="#" action="#">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Input Weight</label>
+                                            <input type="text" class="form-control" placeholder="128">
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Input Height</label>
+                                            <input type="text" class="form-control" placeholder="128">
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Epochs</label>
+                                            <input type="text" class="form-control" placeholder="4000">
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Batch Size</label>
+                                            <input type="text" class="form-control" placeholder="100">
+                                        </div>
+                                        <center>
+                                             <button type="submit" class="btn btn-fill btn-success">Save</button>
+                                        </center>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/highcharts.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/exporting.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/export-data.js') }}" ></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+
+    <!-- Forms Validations Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery.validate.min.js') }}"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+    <script src="{{ url_for('static', filename = 'assets/vendors/moment.min.js') }}"></script>
+    <!--  Charts Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/chartist.min.js') }}"></script>
+    <!--  Plugin for the Wizard -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery.bootstrap-wizard.js') }}"></script>
+    <!--  Notifications Plugin    -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/bootstrap-notify.js') }}"></script>
+    <!-- DateTimePicker Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/bootstrap-datetimepicker.js') }}"></script>
+    <!-- Vector Map plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery-jvectormap.js') }}"></script>
+    <!-- Sliders Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/nouislider.min.js') }}"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <!-- Select Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery.select-bootstrap.js') }}"></script>
+    <!--  DataTables.net Plugin    -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery.datatables.js') }}"></script>
+    <!-- Sweet Alert 2 plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/sweetalert2.js') }}"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jasny-bootstrap.min.js') }}"></script>
+    <!--  Full Calendar Plugin    -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/fullcalendar.min.js') }}"></script>
+    <!-- TagsInput Plugin -->
+    <script src="{{ url_for('static', filename = 'assets/vendors/jquery.tagsinput.js') }}"></script>
+    <!-- Material Dashboard javascript methods -->
+    <script src="{{ url_for('static', filename = 'assets/js/turbo.js') }}"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="{{ url_for('static', filename = 'assets/js/demo.js') }}"></script>
+</html>

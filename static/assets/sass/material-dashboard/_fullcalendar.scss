@@ -1,0 +1,51 @@
+/*override fullcalender styles for tablet and mobile view*/
+
+@media (min-device-width : 768px) and (max-device-width : 1024px)   {
+  .fc-toolbar {
+    .fc-center {
+      clear: both;
+      display: block;
+      margin-left: calc((100% - 135px)/2);
+    }
+    h2 {
+      font-size: 22px;
+    }
+    button {
+      padding: 7px 10px;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .card-calendar{
+    .fc-toolbar {
+      padding-left: 15px;
+      padding-right: 15px;
+      .fc-left,.fc-right {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .fc-center {
+        clear: both;
+        display: block;
+        margin-left: calc((100% - 135px)/2);
+      }
+      h2 {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      button {
+        padding: 5px;
+      }
+    }
+    .fc-day-header {
+      text-align: center;
+    }
+    table > thead > tr > th {
+      width: auto !important;
+    }
+    .fc th {
+      text-align: center;
+    }
+  }
+}

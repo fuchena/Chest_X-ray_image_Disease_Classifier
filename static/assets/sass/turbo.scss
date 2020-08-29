@@ -1,0 +1,134 @@
+/*-------------------------------------------------------------------
+
+* Turbo Admin Material Dashboard V1.1
+
+* Copyright 2017 Turbo
+
+---------------------
+[Table of contents]
+---------------------
+[Plugins]
+
+- nouislider
+- animate
+- sweetalert2
+- nouislider
+- animate
+- sweetalert2
+- datatables.net
+- jquery.jvectormap
+- datetime-picker
+- fullcalendar
+- wizard-card
+- select-bootstrap
+- perfect-scrollbar
+
+
+[Turbo]
+
+- Typography
+- Sidebar and Main Panel
+- Buttons
+- Inputs
+- File Upload
+- Alterts
+- Tables
+- Forms
+- Checkboxes
+- Radios
+- Progress
+- Toggle Button
+- Pages
+- Tags
+- Timeline
+- Ripples
+- Panels
+- Pagination
+- Labels
+- Pills
+- Dialogs
+- Navbars
+- Popups
+- Footer
+- Dropdown
+- Cards
+- Tabs
+- Responsive
+- Color
+- Accordion
+- Pricing Table
+- Modal
+- Chart
+- Wizard
+- FullCalendar
+
+-------------------------------------------------------------------*/
+
+
+
+//variables and mixins
+@import "material-dashboard/variables";
+@import "material-dashboard/mixins";
+@import "material-dashboard/shadows";
+@import "material-dashboard/color";
+
+//plugin css
+@import "material-dashboard/plugins/plugin-nouislider";
+@import "material-dashboard/plugins/animate";
+@import "material-dashboard/plugins/sweetalert2";
+@import "material-dashboard/plugins/datatables.net";
+@import "material-dashboard/plugins/jquery.jvectormap";
+@import "material-dashboard/plugins/plugin-datetime-picker";
+@import "material-dashboard/plugins/fullcalendar";
+@import "material-dashboard/plugins/wizard-card";
+@import "material-dashboard/plugins/select-bootstrap";
+@import "material-dashboard/plugins/perfect-scrollbar";
+
+
+// Core CSS
+@import "material-dashboard/typography";
+@import "material-dashboard/sidebar-and-main-panel";
+@import "material-dashboard/layouts";
+@import "material-dashboard/buttons";
+@import "material-dashboard/misc";
+@import "material-dashboard/inputs";
+@import "material-dashboard/fileupload";
+@import "material-dashboard/alerts";
+@import "material-dashboard/tables";
+@import "material-dashboard/forms";
+@import "material-dashboard/checkboxes";
+@import "material-dashboard/radios";
+@import "material-dashboard/progress";
+@import "material-dashboard/togglebutton";
+@import "material-dashboard/pages";
+@import "material-dashboard/tags";
+@import "material-dashboard/timeline";
+@import "material-dashboard/ripples";
+@import "material-dashboard/panels";
+@import "material-dashboard/pagination";
+@import "material-dashboard/labels";
+@import "material-dashboard/pills";
+@import "material-dashboard/dialogs";
+@import "material-dashboard/navbars";
+@import "material-dashboard/popups";
+@import "material-dashboard/footers";
+
+
+@import "material-dashboard/dropdown";
+@import "material-dashboard/cards";
+@import "material-dashboard/tabs";
+@import "material-dashboard/responsive";
+
+@import "bootstrap-mixins/text-overflow";
+@import "bootstrap-mixins/vendor-prefixes";
+@import "bootstrap-mixins/clearfix";
+
+@import "material-dashboard/mixins/misc";
+
+@import "material-dashboard/misc2";
+@import "material-dashboard/accordion";
+@import "material-dashboard/pricing-table";
+@import "material-dashboard/modal";
+@import "material-dashboard/chart";
+@import "material-dashboard/wizard";
+@import "material-dashboard/fullcalendar";

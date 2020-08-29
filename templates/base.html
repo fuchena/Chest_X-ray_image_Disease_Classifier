@@ -1,0 +1,156 @@
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>Chest X-rays Classifier</title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    </head>
+
+    <body>
+        <header>
+            <h2><i> Keras - Image classification using Convolutionary Neural Networks</i></h2>
+        </header>
+
+        <section>
+             <form id="" enctype="multipart/form-data" method="post" action="/train">
+                    <div class="pull-right" style="margin-right:10%">
+                          <button class="btn btn-success"> Train </button>
+                    </div>
+                </form>
+        </section>
+        {{call}}
+        <div class="container">
+            <div class="contr"><h2><i>Classifying X-rays </i></h2></div>
+            <div class="upload_form_cont">
+                <form action="/process" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" id="result" value="{{result}}" />
+                    <div>
+                        <div><label for="image_file">Please select image file</label></div>
+                        <div><input type="file" name="file" id="image_file" /></div>
+                    </div>
+                    <div>
+                        <button class="btn btn-success">Confirm</button>
+                        <a class="btn btn-info" href="/home" role="button">Refresh</a>
+                    </div>
+                    <div id="file">
+                        <div id="filename"></div>
+                        <div id="filesize"></div>
+                        <div id="filetype"></div>
+                        <div id="filedim"></div>
+                    </div>
+                    <div id="error">You should select valid image files only!</div>
+                    <div id="error2">An error occurred while uploading the file</div>
+                    <div id="abort">The upload has been canceled by the user or the browser dropped the connection</div>
+                    <div id="warnsize">Your file is very big. We can't accept it. Please select more small file</div>
+
+                    <div id="progress_info">
+                        <div id="progress"></div>
+                        <div id="progress_percent">&nbsp;</div>
+                        <div class="clear_both"></div>
+                        <div>
+                            <div id="speed">&nbsp;</div>
+                            <div id="remaining">&nbsp;</div>
+                            <div id="b_transfered">&nbsp;</div>
+                            <div class="clear_both"></div>
+                        </div>
+                        <div id="upload_response"></div>
+                    </div>
+                </form>
+
+
+                <img id="preview" />
+
+                <div class="row">
+                <div class="col-sm-12 p-3 mb-2 bg-info text-white">
+                     <div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+                </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </body>
+
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/highcharts.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/exporting.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/export-data.js') }}" ></script>
+<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/scripts.js') }}" ></script>
+
+<script type="text/javascript">
+
+$(function(){
+    var m = $("#result").val();
+    var p = m.replace(/[']+/g, '');
+    var type = JSON.parse(p);
+    chart(type);
+});
+
+function chart( p ){
+
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Chest X-rays'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Chest X-rays ( 100% )'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'Patient X-ray: <b>Classification</b>'
+            },
+            series: [{
+                name: 'Population',
+                data: p,
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+ console.log(p);
+}
+</script>
+</html>
